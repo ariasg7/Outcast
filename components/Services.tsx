@@ -1,24 +1,24 @@
 const services = [
   {
     id: 1,
-    title: 'THE TREATMENT',
+    title: 'Mixing',
     subtitle: 'Full Mix',
     description: 'Complete mix from raw stems to radio-ready. Vocal tuning, leveling, effects, mastering prep.',
-    price: 'From $500'
+    price: 'From $50'
   },
   {
     id: 2,
-    title: 'THE CLEAN UP',
+    title: 'Mastering',
     subtitle: 'Vocal Tuning',
     description: 'Precision vocal correction and enhancement. Melodyne, Auto-Tune, breath control, and de-essing.',
-    price: 'From $150'
+    price: 'From $75'
   },
   {
     id: 3,
-    title: 'THE BLUEPRINT',
+    title: 'Mixing and Mastering',
     subtitle: 'Recording Templates',
     description: 'Custom session templates for your workflow. Pre-routed chains, effects racks, and mix buses.',
-    price: 'From $250'
+    price: 'Fill contact form for inquiries'
   }
 ];
 

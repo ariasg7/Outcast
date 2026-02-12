@@ -5,24 +5,31 @@ import { useState } from 'react';
 const mixers = [
   {
     id: 1,
-    name: 'ALEX RIVERA',
+    name: 'MP Makoto',
     role: 'Lead Mix Engineer',
-    portrait: 'https://images.unsplash.com/photo-1651017810072-3043e05ddbcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHByb2R1Y2VyJTIwaGVhZHNob3QlMjBibGFjayUyMHdoaXRlfGVufDF8fHx8MTc3MDM1MjAzMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    glitch: 'https://images.unsplash.com/photo-1624154670578-42532d763bd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdWRpbyUyMGVuZ2luZWVyJTIwbWl4aW5nJTIwZGVzayUyMGJsYWNrJTIwd2hpdGV8ZW58MXx8fHwxNzcwMzUyMDMzfDA&ixlib=rb-4.1.0&q=80&w=1080'
+    portrait: 'img/MP Makoto.jpeg',
+    glitch: 'https://images.unsplash.com/photo-1624154670578-42532d763bd3?auto=format&fit=crop&q=80&w=1080'
   },
   {
     id: 2,
-    name: 'JORDAN BLAKE',
-    role: 'Vocal Producer',
-    portrait: 'https://images.unsplash.com/photo-1650765814773-d99b321a0124?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHByb2R1Y2VyJTIwc3R1ZGlvJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcwMjUyNjA1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    glitch: 'https://images.unsplash.com/photo-1707215048454-66e4c10fa026?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWNvcmRpbmclMjBzdHVkaW8lMjBibGFjayUyMHdoaXRlJTIwZ3JhaW55fGVufDF8fHx8MTc3MDM1MjAzMnww&ixlib=rb-4.1.0&q=80&w=1080'
+    name: 'Dreamy',
+    role: 'Mix Engineer',
+    portrait: 'img/DREAMy.jpg',
+    glitch: 'https://images.unsplash.com/photo-1707215048454-66e4c10fa026?auto=format&fit=crop&q=80&w=1080'
   },
   {
     id: 3,
-    name: 'CASEY MORGAN',
-    role: 'Master Engineer',
-    portrait: 'https://images.unsplash.com/photo-1624154670578-42532d763bd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdWRpbyUyMGVuZ2luZWVyJTIwbWl4aW5nJTIwZGVzayUyMGJsYWNrJTIwd2hpdGV8ZW58MXx8fHwxNzcwMzUyMDMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    glitch: 'https://images.unsplash.com/photo-1650765814773-d99b321a0124?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHByb2R1Y2VyJTIwc3R1ZGlvJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcwMjUyNjA1fDA&ixlib=rb-4.1.0&q=80&w=1080'
+    name: 'Prod. Tony',
+    role: 'Mix Engineer',
+    portrait: 'img/prod tony.jpeg',
+    glitch: 'https://images.unsplash.com/photo-1650765814773-d99b321a0124?auto=format&fit=crop&q=80&w=1080'
+  },
+  {
+    id: 4,
+    name: 'Atasament',
+    role: 'Mix Engineer',
+    portrait: 'img/Atasament.png',
+    glitch: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=1080'
   }
 ];
 
@@ -31,20 +38,22 @@ export function MeetTheMixers() {
 
   return (
     <section id="mixers" className="bg-black py-24 px-8">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1500px] mx-auto">
         <h2 
           className="font-['Impact',sans-serif] text-white uppercase text-center mb-16"
-          style={{ fontSize: '80px', letterSpacing: '-0.02em' }}
+          style={{ fontSize: 'clamp(48px, 8vw, 80px)', letterSpacing: '-0.02em' }}
         >
           MEET THE MIXERS
         </h2>
         
-        <div className="grid grid-cols-3 gap-12">
+        {/* Changed from grid-cols-3 to grid-cols-2 (mobile) and lg:grid-cols-4 (desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {mixers.map((mixer, index) => (
             <div 
               key={mixer.id}
               className="relative"
-              style={{ marginTop: index % 2 === 1 ? '80px' : '0' }}
+              // Adjusted stagger logic: 1st and 3rd are high, 2nd and 4th are low
+              style={{ marginTop: index % 2 === 1 ? '40px' : '0' }}
               onMouseEnter={() => setHoveredId(mixer.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
@@ -52,21 +61,20 @@ export function MeetTheMixers() {
                 <img
                   src={hoveredId === mixer.id ? mixer.glitch : mixer.portrait}
                   alt={mixer.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-opacity duration-75"
                   style={{ 
                     filter: 'grayscale(100%) contrast(1.3)',
-                    transition: 'none'
                   }}
                 />
               </div>
               <div className="mt-6">
                 <h3 
-                  className="font-['Impact',sans-serif] text-white uppercase"
-                  style={{ fontSize: '40px', letterSpacing: '-0.02em' }}
+                  className="font-['Impact',sans-serif] text-white uppercase leading-none"
+                  style={{ fontSize: '32px', letterSpacing: '-0.02em' }}
                 >
                   {mixer.name}
                 </h3>
-                <p className="font-['Space_Mono',monospace] text-[#888888] uppercase text-xs mt-1">
+                <p className="font-mono text-[#888888] uppercase text-[10px] mt-2 tracking-widest">
                   {mixer.role}
                 </p>
               </div>
