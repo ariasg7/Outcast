@@ -80,19 +80,19 @@ export function Footer() {
               Connect
             </h4>
             <div className="space-y-3 mb-6">
-              <a href="mailto:studio@outcast.com" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors flex items-center gap-2">
+              <a href="mailto:mpmakoto@null.net" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                studio@outcast.com
+                mpmakoto@null.net
               </a>
               <p className="font-['Space_Mono',monospace] text-[#888888] text-sm">
-                Los Angeles, CA
+                New York, New York
               </p>
             </div>
             
             {/* Social Icons */}
             <div className="flex gap-4">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/flp_0utc4st?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 border-2 border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
@@ -108,7 +108,7 @@ export function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://youtube.com/@flp_0utc4st?si=o-3EiHFASGFrIPpX" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 border-2 border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"

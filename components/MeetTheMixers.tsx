@@ -8,14 +8,14 @@ const mixers = [
     name: 'MP Makoto',
     role: 'Lead Mix Engineer',
     portrait: 'img/MP Makoto.jpeg',
-    glitch: 'https://images.unsplash.com/photo-1624154670578-42532d763bd3?auto=format&fit=crop&q=80&w=1080'
+    glitch: 'img/MP Makoto 1.jpeg'
   },
   {
     id: 2,
     name: 'Dreamy',
     role: 'Mix Engineer',
     portrait: 'img/DREAMy.jpg',
-    glitch: 'https://images.unsplash.com/photo-1707215048454-66e4c10fa026?auto=format&fit=crop&q=80&w=1080'
+    glitch: 'img/DREAMy 1.jpeg'
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ const mixers = [
     id: 4,
     name: 'Atasament',
     role: 'Mix Engineer',
-    portrait: 'img/Atasament.png',
-    glitch: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=1080'
+    portrait: 'img/Atasament.JPG',
+    glitch: 'img/Atasament 1.JPG'
   }
 ];
 
