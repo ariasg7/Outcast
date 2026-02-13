@@ -1,135 +1,121 @@
 "use client";
 
 import { Instagram, Twitter, Youtube, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t-2 border-white py-16 px-8">
+    <footer className="bg-black border-t-2 border-white py-16 px-6 md:px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-4 gap-12 mb-12">
+        {/* Main Grid: 1 column on mobile, 2 on tablet, 4 on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
+          
           {/* Logo & Tagline */}
-          <div className="col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <img 
-                src= "img/Outcast.png" 
-                alt="Outcast Logo" 
-                className="w-16 h-16 invert"
-              />
-            </div>
-            <h3 className="font-['Impact',sans-serif] text-white text-3xl uppercase mb-2">
+          <div className="flex flex-col items-center md:items-start">
+            <img 
+              src="/img/Outcast.png" 
+              alt="Outcast Logo" 
+              className="w-16 h-16 invert mb-4"
+            />
+            <h3 className="font-['Impact',sans-serif] text-white text-4xl uppercase leading-none">
               OUTCAST
             </h3>
-            <p className="font-['Space_Mono',monospace] text-[#888888] text-xs uppercase">
+            <p className="font-mono text-[#888888] text-[10px] tracking-[0.3em] uppercase mt-2">
               Producer Collective
             </p>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-4">
+            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-6 tracking-tighter">
               Navigate
             </h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#mixers" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors uppercase">
-                  Meet the Mixers
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors uppercase">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#vault" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors uppercase">
-                  The Vault
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors uppercase">
-                  Contact
-                </a>
-              </li>
+            <ul className="space-y-4">
+              {['Mixers', 'Services', 'Vault', 'Contact'].map((item) => (
+                <li key={item}>
+                  {item === 'Vault' ? (
+                    /* Use Link for the Vault page */
+                    <Link 
+                      href="/vault" 
+                      className="font-mono text-[#888888] text-sm hover:text-white transition-colors uppercase tracking-widest"
+                    >
+                      {item}
+                    </Link>
+                  ) : (
+                    /* Use standard # anchors for home page sections */
+                    <a 
+                      href={`/#${item.toLowerCase()}`} 
+                      className="font-mono text-[#888888] text-sm hover:text-white transition-colors uppercase tracking-widest"
+                    >
+                      {item}
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Services */}
-          <div>
-            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-4">
-              Services
+          {/* Services List (Hidden on very small mobile to save space, or kept for detail) */}
+          <div className="hidden md:block">
+            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-6 tracking-tighter">
+              Expertise
             </h4>
-            <ul className="space-y-2">
-              <li className="font-['Space_Mono',monospace] text-[#888888] text-sm uppercase">
-                Full Mix
-              </li>
-              <li className="font-['Space_Mono',monospace] text-[#888888] text-sm uppercase">
-                Vocal Tuning
-              </li>
-              <li className="font-['Space_Mono',monospace] text-[#888888] text-sm uppercase">
-                Recording Templates
-              </li>
-              <li className="font-['Space_Mono',monospace] text-[#888888] text-sm uppercase">
-                Mastering
-              </li>
+            <ul className="space-y-4">
+              {['Full Mix', 'Vocal Tuning', 'Recording Templates', 'Mastering'].map((service) => (
+                <li key={service} className="font-mono text-[#888888] text-sm uppercase tracking-widest">
+                  {service}
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Contact */}
-          <div>
-            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-4">
+          {/* Contact & Socials */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="font-['Impact',sans-serif] text-white text-xl uppercase mb-6 tracking-tighter">
               Connect
             </h4>
-            <div className="space-y-3 mb-6">
-              <a href="mailto:mpmakoto@null.net" className="font-['Space_Mono',monospace] text-[#888888] text-sm hover:text-white transition-colors flex items-center gap-2">
+            <div className="space-y-4 mb-8">
+              <a href="mailto:mpmakoto@null.net" className="font-mono text-[#888888] text-sm hover:text-white transition-colors flex items-center justify-center md:justify-start gap-2 italic">
                 <Mail className="w-4 h-4" />
                 mpmakoto@null.net
               </a>
-              <p className="font-['Space_Mono',monospace] text-[#888888] text-sm">
-                New York, New York
+              <p className="font-mono text-[#888888] text-sm uppercase tracking-widest">
+                New York, NY
               </p>
             </div>
             
             {/* Social Icons */}
             <div className="flex gap-4">
-              <a 
-                href="https://www.instagram.com/flp_0utc4st?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 border-2 border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 border-2 border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://youtube.com/@flp_0utc4st?si=o-3EiHFASGFrIPpX" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 border-2 border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
+              {[
+                { Icon: Instagram, href: "https://www.instagram.com/flp_0utc4st" },
+                { Icon: Twitter, href: "https://twitter.com" },
+                { Icon: Youtube, href: "https://youtube.com/@flp_0utc4st" }
+              ].map(({ Icon, href }, idx) => (
+                <a 
+                  key={idx}
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
         
-        {/* Bottom Bar */}
-        <div className="border-t-2 border-[#1A1A1A] pt-8 flex justify-between items-center">
-          <p className="font-['Space_Mono',monospace] text-[#888888] text-xs">
-            © 2026 OUTCAST PRODUCER COLLECTIVE. ALL RIGHTS RESERVED.
+        {/* Bottom Bar: Stacks on mobile */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="font-mono text-[#444] text-[10px] tracking-widest text-center">
+            © 2026 OUTCAST PRODUCER COLLECTIVE.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="font-['Space_Mono',monospace] text-[#888888] text-xs hover:text-white transition-colors uppercase">
-              Privacy Policy
+          <div className="flex gap-8">
+            <a href="#" className="font-mono text-[#444] text-[10px] hover:text-white transition-colors uppercase tracking-widest">
+              Privacy
             </a>
-            <a href="#" className="font-['Space_Mono',monospace] text-[#888888] text-xs hover:text-white transition-colors uppercase">
-              Terms of Service
+            <a href="#" className="font-mono text-[#444] text-[10px] hover:text-white transition-colors uppercase tracking-widest">
+              Terms
             </a>
           </div>
         </div>
