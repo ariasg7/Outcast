@@ -21,8 +21,8 @@ const mixers = [
     id: 3,
     name: 'Prod. Tony',
     role: 'Mix Engineer',
-    portrait: 'img/prod tony.jpeg',
-    glitch: 'https://images.unsplash.com/photo-1650765814773-d99b321a0124?auto=format&fit=crop&q=80&w=1080'
+    portrait: 'img/prod tony 1.JPG',
+    glitch: 'img/prod tony.jpeg'
   },
   {
     id: 4,

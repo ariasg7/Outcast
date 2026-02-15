@@ -6,14 +6,14 @@ const services = [
     title: 'Mixing',
     subtitle: 'Full Mix',
     description: 'Complete mix from raw stems to radio-ready. Vocal tuning, leveling, effects, mastering prep.',
-    price: 'From $50'
+    price: 'From $75 - $150'
   },
   {
     id: 2,
     title: 'Mastering',
     subtitle: 'Vocal Tuning',
     description: 'Precision vocal correction and enhancement. Melodyne, Auto-Tune, breath control, and de-essing.',
-    price: 'From $75'
+    price: 'From $50 - $75'
   },
   {
     id: 3,
